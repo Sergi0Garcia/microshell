@@ -1,6 +1,8 @@
 
+NAME = microshell
+
 run: 
-	gcc -Wall -Werror -Wextra microshell.c 
+	gcc -Wall -Werror -Wextra main.c -o $(NAME)
 
 del: 
-	rm -rf a.out
+	rm -rf $(NAME)
