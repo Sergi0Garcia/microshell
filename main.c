@@ -6,7 +6,7 @@
 /*   By: segarcia <segarcia@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 12:28:39 by segarcia          #+#    #+#             */
-/*   Updated: 2023/04/11 13:35:59 by segarcia         ###   ########.fr       */
+/*   Updated: 2023/04/12 11:12:22 by segarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int ft_error(char *str, char *arg)
 			write(2, arg++, 1);
 	write(2, "\n", 1);
 	return (1);
-}
+}`
 
 int ft_execute(char **argv, int i, int tmp_fd, char **env)
 {

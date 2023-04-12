@@ -6,7 +6,7 @@
 /*   By: segarcia <segarcia@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 13:30:20 by segarcia          #+#    #+#             */
-/*   Updated: 2023/04/11 14:11:19 by segarcia         ###   ########.fr       */
+/*   Updated: 2023/04/12 11:07:10 by segarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,9 @@ int ft_execute(char **argv, char **env, int i, int fd)
     dup2(fd, 0);
     close(fd);
     g_status = execve(argv[0], argv, env);
+    printf("Hey");
+    if (g_status != 0)
+        ft_error("error: cannot execute ", argv[0]);
     return (g_status);
 }
 
@@ -100,11 +103,11 @@ int main(int argc, char **argv, char **env)
                 g_status = ft_execute(argv, env, i, tmp_fd);
                 if (g_status != 0)
                     return (g_status);
-            }   
+            }
             else
             {
                 close(tmp_fd);
-                while (waitpid(-1, &g_status, 0) != -1);
+                while (waitpid(-1, &g_status, 2) != -1);
                 tmp_fd = dup(0);
             }
         }

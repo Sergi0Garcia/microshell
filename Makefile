@@ -2,7 +2,7 @@
 NAME = microshell
 
 run: 
-	gcc -Wall -Werror -Wextra main2.c -o $(NAME)
+	gcc -Wall -Werror -Wextra main.c -o $(NAME)
 
 del: 
 	rm -rf $(NAME)
